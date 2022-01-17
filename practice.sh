@@ -1,5 +1,13 @@
 #!/bin/bash
 
+
+declare -i num = $(( $RANDOM % 6 ))
+echo "$num"
+
+
+
+echo "***************************************************"
+
 if [ 4 -lt 5 -a 5 -gt 4 ]      # output is true
 then
 	echo "hi"
@@ -16,16 +24,16 @@ fi
 
 echo "****************************************************"
 
-echo "Select your animal"
-select animal in "cat" "dog"
-do
-	case $animal in
-		cat) echo "The animal is cat";;
-		dog) echo "The animal is dog";;
-		*)   echo "No match"
-			break;;
-	esac
-done
+#echo "Select your animal"
+#select animal in "cat" "dog"
+#do
+#	case $animal in
+#		cat) echo "The animal is cat";;
+#		dog) echo "The animal is dog";;
+#		*)   echo "No match"
+#			break;;
+#	esac
+#done
 
 echo "***************************************************"
 
