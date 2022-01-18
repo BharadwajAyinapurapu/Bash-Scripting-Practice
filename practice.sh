@@ -1,26 +1,64 @@
 #!/bin/bash
 
 
-declare -i num = $(( $RANDOM % 6 ))
-echo "$num"
+
+#declare -i x=10
+#(( 3+3 ))
+#echo "$x"
+
+echo "**************************************************"
+
+arr=("hello" "BD" "how" "are")
+
+for i in ${arr[@]}
+do
+	echo "$i"
+done
+
+
+echo "**************************************************"
+
+#echo -n "The current time is :i "
+#date +"%H-%M-%S"
+
+#sleep 10s
+
+#echo -n "The current time is : "
+#date +"%H-%M-%S"
 
 
 
 echo "***************************************************"
 
-if [ 4 -lt 5 -a 5 -gt 4 ]      # output is true
-then
-	echo "hi"
-else
-	echo "bye"
-fi
+#declare -i num = $(( $RANDOM % 6 ))
+#echo "$num"
 
-if [[ 4 -gt 5 && 5 -lt 4 ]]    # output is false
-then
-       	echo "hi"
-else
-	echo "bye"
-fi
+
+
+echo "***************************************************"
+
+#if [ 4 -lt 5 ] && [ 5 -gt 4 ]      # output is true
+#then
+#	echo "hi"
+#else
+#	echo "bye"
+#fi
+
+
+#if [ 4 -l 5 -a 5 -lt 4 ]
+#then
+#	echo "hi"
+#else 
+#	echo "bye"
+#fi
+
+
+#if [[ 4 -gt 5 && 5 -lt 4 ]]    # output is false
+#then
+#       	echo "hi"
+#else
+#	echo "bye"
+#fi
 
 echo "****************************************************"
 

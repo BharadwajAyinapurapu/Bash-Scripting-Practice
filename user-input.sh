@@ -31,10 +31,42 @@ oddeven(){
 	else
 		echo "The number is ODD"
 	fi
-	user
+}
+
+prime(){
+	echo " Enter any number of your choice "
+	read num
+
+	if (( num == 0 ))
+	then 
+		echo "Neither prime nor composite"
+	elif (( num == 1 ))
+	then
+		echo "Not a prime number"
+	else
+		declare -i x=$(( num/2 ))
+		declare -i f=0
+		for((i=2; i<=$x; i++ ))
+		do
+			if (( num%i == 0 ))
+			then 
+				echo "Its not a Prime number"
+				f=1
+				break
+			fi
+		done
+		if (( f == 0 ))
+		then
+			echo "Its a Prime number"
+		fi
+	fi
 }
 
 
+roll(){
+	num=$(( 1 + $RANDOM % 6 )) 
+	echo "The number you got is : $num"
+}
 
 user(){
 	echo "Choose one of the following functionality"
@@ -50,6 +82,6 @@ user(){
 	done
 }
 
-first
+#first
 user
 
