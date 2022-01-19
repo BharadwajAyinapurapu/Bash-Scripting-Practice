@@ -30,26 +30,34 @@ oddeven(){
 prime(){
 
 	if (( $1 == 0 ))
-	then 
+	then
 		echo "Neither prime nor composite"
 	elif (( $1 == 1 ))
 	then
 		echo "Not a prime number"
 	else
-		declare -i x=$(( $1/2 ))
-		declare -i f=0
-		for((i=2; i<=$x; i++ ))
-		do
-			if (( $1%i == 0 ))
-			then 
-				echo "Its not a Prime number"
-				f=1
-				break
-			fi
-		done
-		if (( f == 0 ))
+		if (( $1==0 ))
+		then 
+			echo "Neither prime nor composite"
+		elif (($1==1))
 		then
-			echo "Its a Prime number"
+			echo "Not a prime number"
+		else
+			declare -i x=$(( $1/2 ))
+			declare -i f=0
+			for((i=2; i<=$x; i++ ))
+			do
+				if (($1%i==0))
+				then 
+					echo "Its not a Prime number"
+					(( f=1 ))
+					break
+				fi
+			done
+			if (( $f == 0 ))
+			then
+				echo "Its a Prime number"
+			fi
 		fi
 	fi
 }
@@ -67,7 +75,7 @@ user(){
 		case $1 in
 			1) roll;;
 			2) oddeven $2;;
-			3) prime $3;;
+			3) prime $2;;
 			4) break;;
 			*) echo "Wrong option. Choose another one.";;
 		esac
@@ -75,5 +83,5 @@ user(){
 }
 
 #first $1 $2
-user $1 $2 $3
+user $1 $2
 
