@@ -2,19 +2,13 @@
 
 first(){
 
-	echo "Enter your name :"
-	read name
 
-	echo "Enter your password :"
-	read -s pass
 
-	if [[ $name == "Bharadwaj" && $pass == "bd" ]]
+	if [[ $1 == "Bharadwaj" && $2 == "bd" ]]
 	then
 		echo "Login successful"
 	else
-		echo "Login failed"
-		echo "$(clear)"
-		first
+		echo "Login failed" 
 	fi
 
 }
@@ -22,10 +16,10 @@ first(){
 
 
 oddeven(){
-	echo " Enter any number of your choice "
-	read num
 
-	if (( num % 2 == 0 ))
+#	num=$1
+#	echo "$1"
+	if (( $1 % 2 == 0 ))
 	then
 		echo "The number is EVEN"
 	else
@@ -34,21 +28,19 @@ oddeven(){
 }
 
 prime(){
-	echo " Enter any number of your choice "
-	read num
 
-	if (( num == 0 ))
+	if (( $1 == 0 ))
 	then 
 		echo "Neither prime nor composite"
-	elif (( num == 1 ))
+	elif (( $1 == 1 ))
 	then
 		echo "Not a prime number"
 	else
-		declare -i x=$(( num/2 ))
+		declare -i x=$(( $1/2 ))
 		declare -i f=0
 		for((i=2; i<=$x; i++ ))
 		do
-			if (( num%i == 0 ))
+			if (( $1%i == 0 ))
 			then 
 				echo "Its not a Prime number"
 				f=1
@@ -69,19 +61,19 @@ roll(){
 }
 
 user(){
-	echo "Choose one of the following functionality"
-	select option in "Roll a dice" "Odd or Even number" "Prime number" "Quit"
-	do
-		case $option in
-			"Roll a dice") roll;;
-			"Odd or Even number") oddeven;;
-			"Prime number") prime;;
-			"Quit") break;;
+	#echo "Choose one of the following functionality"
+	#select option in "Roll a dice" "Odd or Even number" "Prime number" "Quit"
+	#do
+		case $1 in
+			1) roll;;
+			2) oddeven $2;;
+			3) prime $3;;
+			4) break;;
 			*) echo "Wrong option. Choose another one.";;
 		esac
-	done
+	#done
 }
 
-#first
-user
+#first $1 $2
+user $1 $2 $3
 
