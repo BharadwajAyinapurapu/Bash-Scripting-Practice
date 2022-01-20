@@ -6,4 +6,5 @@ bash user-input.sh PRIME 11
 bash user-input.sh SQUARE 12
 bash user-input.sh ROLL
 bash user-input.sh PRIME 324
+bash user-input.sh SQUARE 4
 bash user-input.sh QUIT
