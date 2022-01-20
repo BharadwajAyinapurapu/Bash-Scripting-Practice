@@ -2,12 +2,18 @@
 
 
 
-first (){
-	echo "$1 , $2" 
-}
 
-echo "$1 , $2 "
-first $1 $2
+
+
+
+echo "************************************************"
+
+list=$(free -m | grep Mem | awk '{print $1}')
+echo "$list"
+
+y=$(df -h | grep "/dev/sda1" | awk '{print $4}')
+echo "$y"
+
 
 echo "**************************************************"
 

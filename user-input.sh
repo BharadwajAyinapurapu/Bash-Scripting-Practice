@@ -68,6 +68,9 @@ roll(){
 	echo "The number you got is : $num"
 }
 
+square(){
+	echo "The square of the number is : $(( $1 * $1 ))"
+}
 user(){
 	#echo "Choose one of the following functionality"
 	#select option in "Roll a dice" "Odd or Even number" "Prime number" "Quit"
@@ -76,7 +79,8 @@ user(){
 			1) roll;;
 			2) oddeven $2;;
 			3) prime $2;;
-			4) break;;
+			4) square $2;;
+			5) break;;
 			*) echo "Wrong option. Choose another one.";;
 		esac
 	#done
