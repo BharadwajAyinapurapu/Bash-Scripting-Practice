@@ -1,5 +1,5 @@
 bash user-input.sh ROLL
-bash user-input.sh ODDEVEN 43
+bash user-input.sh ODDEVEN 45
 bash user-input.sh ODDEVEN 76
 bash user-input.sh PRIME 52
 bash user-input.sh PRIME 11
